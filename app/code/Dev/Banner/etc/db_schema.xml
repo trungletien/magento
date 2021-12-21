@@ -1,0 +1,16 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="banner" resource="default" engine="innodb"
+           comment="Banner Table">
+<!--    <table name="new_banner" resource="default" engine="innodb"-->
+<!--           comment="Banner Table" onCreate="migrateDataFromAnotherTable(banner)">-->
+        <column xsi:type="int" name="banner_id" unsigned="false" nullable="false" identity="true" comment="Banner ID"/>
+        <column xsi:type="varchar" name="name" comment="Banner Name"/>
+        <column xsi:type="varchar" name="description" comment="Banner Description"/>
+        <column xsi:type="varchar" name="image" comment="Banner Image"/>
+        <column xsi:type="varchar" name="status" comment="Banner Status"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="banner_id" />
+        </constraint>
+    </table>
+</schema>
+

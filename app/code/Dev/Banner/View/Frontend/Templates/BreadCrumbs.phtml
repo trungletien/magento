@@ -1,0 +1,18 @@
+<?php
+/** @var $viewModel \Dev\Banner\ViewModel\BannerBreadCrumbs */
+$viewModel = $block->getViewModel();
+?>
+<div class="breadcrumbs">
+    Home/
+    <div class="category-view-position">
+        <div class="container">
+            <div class="inner-breadcrumbs">
+                <ul class="items">
+                    <li class="item">
+                        <a><?= $block->escapeHtml($viewModel->getBanner()); ?></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

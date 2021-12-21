@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">banner_banner_listing.banner_banner_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>banner_banner_columns</spinner>
+        <deps>
+            <dep>banner_banner_listing.banner_banner_listing_data_source</dep>
+        </deps>
+        <buttons>
+            <button name="add">
+                <url path="*/*/add"/>
+                <class>primary</class>
+                <label translate="true">Add new</label>
+            </button>
+        </buttons>
+    </settings>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <exportButton name="export_button"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters" />
+        <paging name="listing_paging"/>
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
+                </item>
+            </argument>
+            <action name="delete">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">delete</item>
+                        <item name="label" xsi:type="string" translate="true">Delete</item>
+                        <item name="url" xsi:type="url" path="*/*/delete"/>
+                        <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Delete Row</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
+                        </item>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+    </listingToolbar>
+    <dataSource name="banner_banner_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <updateUrl path="mui/index/render"/>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">banner_id</param>
+            </storageConfig>
+        </settings>
+        <aclResource>ViMagento_HelloWorld::listing</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="banner_banner_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>banner_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <!-- columns -->
+    <columns name="banner_banner_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>banner_id</indexField>
+            </settings>
+        </selectionsColumn>
+
+        <!-- Column id -->
+        <column name="banner_id" sortOrder="10">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">ID</label>
+            </settings>
+        </column>
+
+        <!-- Column title -->
+        <column name="name" sortOrder="20">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Name</label>
+            </settings>
+        </column>
+
+        <!-- Column Description -->
+        <column name="description" sortOrder="20">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Description</label>
+            </settings>
+        </column>
+
+        <!-- Column Description -->
+        <column name="image" sortOrder="20">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Image</label>
+            </settings>
+        </column>
+
+        <!-- Column status -->
+        <column name="status" sortOrder="30">
+            <settings>
+                <filter>select</filter>
+                <label translate="true">Status</label>
+            </settings>
+        </column>
+
+<!--        <actionsColumn name="actions" class="Dev\Banner\Ui\Component\Listing\Grid\Column\Action">-->
+<!--            <settings>-->
+<!--                <indexField>banner_id</indexField>-->
+<!--            </settings>-->
+<!--        </actionsColumn>-->
+    </columns>
+</listing>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+            <block class="Magento\Theme\Block\Html\Breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Dev\Banner\Block\BannerIndex" name="dev_banner_bannerindex" template="Dev_Banner::bannerindex.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="footer" remove="">
+        </referenceContainer>
+        <move element="breadcrumbs" destination="page.top" />
+        <referenceBlock name="breadcrumbs" template="Dev_Banner::BreadCrumbs.phtml">
+            <arguments>
+                <argument name="view_model" xsi:type="object">Dev\Banner\ViewModel\BannerBreadCrumbs</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dev_Banner::greetings" title="Greetings" translate="title" module="Dev_Banner" parent="Magento_Backend::content" sortOrder="50" dependsOnModule="Dev_Banner" resource="Dev_Banner::greetings"/>
+        <add id="Dev_Banner::greetings_helloworld" title="Hello World" translate="title" module="Dev_Banner" parent="Dev_Banner::greetings" sortOrder="10" dependsOnModule="Dev_Banner" action="admindevbanner/banner" resource="Dev_Banner::greetings"/>
+    </menu>
+</config>
