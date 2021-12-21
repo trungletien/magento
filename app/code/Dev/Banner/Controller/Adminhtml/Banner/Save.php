@@ -33,7 +33,7 @@ class Save extends Action
     {
         $data = $this->getRequest()->getPostValue();
         $id = !empty($data['banner_id']) ? $data['banner_id'] : null;
-
+        $data['image'] = $data['images'][0]['name'];
         $newData = [
             'name' => $data['name'],
             'description' => $data['description'],

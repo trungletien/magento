@@ -1,6 +1,6 @@
 <?php
 
-namespace ViMagento\HelloWorld\Model\Config;
+namespace Dev\Banner\Model\Banner\Source;
 
 /**
  * Class Status
