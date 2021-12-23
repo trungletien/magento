@@ -1,0 +1,6 @@
+.admin__menu .level-0.item-menu_id > a:before {
+    content: url('../images/banner.svg');
+}
+li#menu-vendor_extension-menu_id > a > span {
+    display: none;
+}
