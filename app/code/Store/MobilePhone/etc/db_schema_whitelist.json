@@ -1,0 +1,16 @@
+{
+    "mobile_phone": {
+        "column": {
+            "mobile_phone_id": true,
+            "description": true,
+            "image": true,
+            "price": true,
+            "created_at": true,
+            "updated_at": true,
+            "name": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
