@@ -12,5 +12,17 @@
         "constraint": {
             "PRIMARY": true
         }
+    },
+    "category": {
+        "column": {
+            "category_id": true,
+            "name": true,
+            "image": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
     }
 }

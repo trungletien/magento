@@ -22,5 +22,18 @@
             <column name="mobile_phone_id"/>
         </constraint>
     </table>
+    <table name="category" resource="default" engine="innodb" comment="Category Table">
+        <column xsi:type="int" name="category_id" unsigned="true" nullable="false" identity="true"
+                comment="Category ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" comment="Name Category"/>
+        <column xsi:type="varchar" name="image" nullable="false" length="255" comment="Image Category"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Update Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="category_id"/>
+        </constraint>
+    </table>
 </schema>
 

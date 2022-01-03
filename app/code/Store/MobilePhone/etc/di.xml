@@ -13,6 +13,19 @@
             <argument name="resourceModel" xsi:type="string">Store\MobilePhone\Model\ResourceModel\MobilePhone</argument>
         </arguments>
     </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="category_listing_data_source" xsi:type="string">category_collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="category_collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">category</argument>
+            <argument name="resourceModel" xsi:type="string">Store\MobilePhone\Model\ResourceModel\Category</argument>
+        </arguments>
+    </virtualType>
     <virtualType name="Store\MobilePhone\MobilePhoneImageUpload" type="Magento\Catalog\Model\ImageUploader">
         <arguments>
             <argument name="baseTmpPath" xsi:type="string">mobilephone/tmp/images</argument>
@@ -34,6 +47,29 @@
     <type name="Store\MobilePhone\Controller\Adminhtml\MobilePhone\Upload">
         <arguments>
             <argument name="imageUploader" xsi:type="object">Store\MobilePhone\MobilePhoneImageUpload</argument>
+        </arguments>
+    </type>
+    <virtualType name="Store\MobilePhone\CategoryImageUpload" type="Magento\Catalog\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">category/tmp/images</argument>
+            <argument name="basePath" xsi:type="string">category/images</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+            <argument name="allowedMimeTypes" xsi:type="array">
+                <item name="jpg" xsi:type="string">image/jpg</item>
+                <item name="jpeg" xsi:type="string">image/jpeg</item>
+                <item name="gif" xsi:type="string">image/gif</item>
+                <item name="png" xsi:type="string">image/png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Store\MobilePhone\Controller\Adminhtml\Category\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Store\MobilePhone\CategoryImageUpload</argument>
         </arguments>
     </type>
 </config>
